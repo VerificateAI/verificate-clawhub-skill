@@ -1,6 +1,6 @@
 ---
 name: verificate
-description: "The trust layer for OpenClaw. Verify AI-written code, tool calls and research answers before you trust them — 17 deterministic reality gates + a frontier-model review with veto power. Free to try, no signup."
+description: "The trust layer for OpenClaw. Verify AI-written code, tool calls and research answers before you trust them — deterministic veto checks + a Claude Haiku 5.5 review, with veto power. Free to try, no signup."
 homepage: https://verificate.ai/mcp
 metadata:
   {
@@ -26,7 +26,7 @@ metadata:
 
 It connects OpenClaw to the hosted Verificate MCP server (no signup — 100 free validations per machine):
 
-- **`validate_ai_output`** — the merge gate for AI-written code *and* documents: 17 deterministic reality gates (mock/placeholder veto, invented-API checks, false-completion detection) run first and can't be overridden, then a frontier-model review scores what survives. Binary approve/reject with severity-ranked findings.
+- **`validate_ai_output`** — the merge gate for AI-written code *and* documents: deterministic veto checks (mocks and placeholders, reward-gamed tests, invented standard-library APIs, secrets in logs, false-completion claims) run first and can't be overridden, then a Claude Haiku 5.5 review (ISO/IEC 25010, ISO/IEC 5055) checks the rest, including third-party API calls. One decision with severity-ranked findings and a receipt.
 - **`validate_plan`** — gate a design or plan before any code is written.
 - **`analyze_code`** — advisory deep-dive: performance, scalability, failure modes. No verdict, never blocks.
 - **`generate_code`** — generate code and gate it in one step.
