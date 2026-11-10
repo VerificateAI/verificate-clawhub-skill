@@ -1,6 +1,6 @@
 ---
 name: verificate
-description: "The trust layer for OpenClaw. Verify AI-written code, tool calls and research answers before you trust them — 17 deterministic reality gates + a frontier-model review with veto power. Free to try, no signup."
+description: "The trust layer for OpenClaw. Verify AI-written code, tool calls and research answers before you trust them — deterministic veto checks + a Claude Haiku 5.5 review, with veto power. Free to try, no signup."
 homepage: https://verificate.ai/mcp
 metadata:
   {
@@ -24,9 +24,9 @@ metadata:
 
 **The trust layer for OpenClaw.** ClawHub skills are powerful but untrusted — Snyk audits keep finding prompt injection, malware and credential theft in community skills, and every AI answer sounds confident whether it's right or wrong. Verificate is the skill that verifies the others.
 
-It connects OpenClaw to the hosted Verificate MCP server (no signup — 25 free validations per machine):
+It connects OpenClaw to the hosted Verificate MCP server (no signup — 100 free validations per machine):
 
-- **`validate_ai_output`** — the merge gate for AI-written code *and* documents: 17 deterministic reality gates (mock/placeholder veto, invented-API checks, false-completion detection) run first and can't be overridden, then a frontier-model review scores what survives. Binary approve/reject with severity-ranked findings.
+- **`validate_ai_output`** — the merge gate for AI-written code *and* documents: deterministic veto checks (mocks and placeholders, reward-gamed tests, invented standard-library APIs, secrets in logs, false-completion claims) run first and can't be overridden, then a Claude Haiku 5.5 review (ISO/IEC 25010, ISO/IEC 5055) checks the rest, including third-party API calls. One decision with severity-ranked findings and a receipt.
 - **`validate_plan`** — gate a design or plan before any code is written.
 - **`analyze_code`** — advisory deep-dive: performance, scalability, failure modes. No verdict, never blocks.
 - **`generate_code`** — generate code and gate it in one step.
@@ -54,4 +54,4 @@ whatever the gate catches.
 
 Read-only: your code is analyzed, never executed, never used to train models. The skill's only network call is to `https://mcp.verificate.ai/mcp` — no other egress, nothing to exfiltrate. Open source. Privacy policy: https://verificate.ai/privacy
 
-After the free 25, a 30-day trial (no card, then $30/mo): https://verificate.ai/auth/signup
+After the free 100, a 30-day trial (no card, then $30/mo): https://verificate.ai/auth/signup
